@@ -16,12 +16,17 @@ Proposed investigation of time-aligned satellite observations, meteorology, vege
 ### Workstream 3: Geospatial interpretation
 Proposed non-operational geospatial visualization of historical fire-related observations, uncertainty and risk context for research evaluation.
 
+## Neural network training code
+
+A **research-only** PyTorch image-level fire/no-fire training scaffold now supports ResNet18, MobileNetV3-Small, EfficientNet-B0 and optional single-node DistributedDataParallel (DDP). It has been exercised with synthetic images on CPU, including a two-process Gloo run; neither genuine wildfire data training nor multi-GPU execution has yet been verified. See [training instructions](training/README.md) and the [synthetic integration test](tests/test_training_pipeline.py). This classifier is distinct from the future YOLO fire/smoke *object detection* milestone.
+
 ## Contents
 - [Prospective research protocol](RESEARCH_PROTOCOL.md)
 - [Proposed implementation roadmap](ROADMAP.md)
 - [Candidate public data sources](DATA_SOURCES.md)
 - [Dated evidence and progress log](EVIDENCE_LOG.md)
 - [FIRMS CSV descriptive utility](src/firms_hotspot_baseline.py)
+- [Distributed deep learning training baseline (ResNet18, MobileNetV3, EfficientNet-B0)](training/README.md)
 - [Synthetic unit test](tests/test_firms_hotspot_baseline.py)
 
 ## Reproduce the starter utility
@@ -40,4 +45,4 @@ All workstreams are preliminary and subject to adjustment based on available lab
 **Safety:** This repository is for research only. It must not be used for wildfire emergency alerts, evacuation guidance, or other safety-critical decisions.
 
 ## Record
-- **October 2026:** Public repository created; prospective research and documentation starter materials added. Refer to actual GitHub commit timestamps for precise dates. No completed wildfire experiments are claimed.
+- **October 2026:** Public repository created; prospective research and documentation starter materials added. Refer to actual GitHub commit timestamps for precise dates. Initial PyTorch classification/DDP software scaffolding added and tested on synthetic CPU images. No completed wildfire experiments or multi-GPU runs are claimed.
