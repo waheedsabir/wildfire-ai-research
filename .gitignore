@@ -1,0 +1,9 @@
+# Local research images, weights and experiment artifacts
+outputs/
+data/
+datasets/
+*.pt
+*.pth
+__pycache__/
+.pytest_cache/
+.DS_Store
